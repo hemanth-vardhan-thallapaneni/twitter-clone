@@ -7,11 +7,7 @@ var multer = require('multer');
 var upload = multer();
 require("dotenv").config()
 
-// adminsecret_key = ODLJ7xZ5z5ONcxSqBlgR3MGwNbaZdLwUPmGXdmcs;
-// adminaccess key = AKIAZMOUXKCTF7YGHHXD
 
-// hemanth_secreat key = YlBHx3YEtizLC48AHVOlRpwiWyPfHJWBMth71q0G;
-// admin_access_key = AKIAZMOUXKCTGSBJJ26E
 
 
 

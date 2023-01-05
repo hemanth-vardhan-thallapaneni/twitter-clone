@@ -1,0 +1,62 @@
+<div class="home-feed-container">
+    <div class="tweet-input-box">
+        <div class="tweet-input-header">
+            <h2>Home</h2>
+           <img (click)="darkMode()" *ngIf="!isDarkMode" height="40px" width="40px" src=".../../../../assets/icons/light-mode.png" alt="" srcset="">
+           <img (click)="darkMode()" *ngIf="isDarkMode" height="30px" width="30px" src=".../../../../assets/icons/dark-mode.png" alt="" srcset=""> 
+            <input style="display: none;"  id="theme-toggle" (change)="darkMode()" type="checkbox">
+        </div>
+        <div class="tweet-input">
+            <div class="profile-pic">
+                <img src="../../assets/icons/profile.png" alt="" srcset="">
+            </div>
+            <div class="input-div">
+                <textarea [(ngModel)]= "tweetObj['tweet']" placeholder="What's happening?" name="tweet" id=""></textarea>
+                <div class="showImage" *ngIf="media.type">
+                    <img [src]="this.media.url" alt="" srcset="">
+                </div>
+                <div class="input-toolbar">
+                    <div >
+                        <span>
+                            <input  (change)="selectFile($event)" accept="image/jpeg,image/png"  type="file" id="image-type">
+                            <img (click)="mediaInput('image-type')" src="../../assets/icons/image.png" alt="" srcset="">
+                        </span>
+                        <span>
+                            <input  (change)="selectFile($event)" type="file" accept="image/gif" id="gif-type">
+                            <img   (click)="mediaInput('gif-type')" src="../../assets/icons/gif.png" alt="" srcset="">
+                        </span>
+                        <span>
+                            <input (change)="selectFile($event)" type="file" accept="video/*" id="video-type">
+                            <img (click)="mediaInput('video-type')" src="../../assets/icons/emoji.png" alt="" srcset="">
+                        </span>
+                    </div>
+                   
+                    <button (click)="postTweet()" class="tweet-button">Tweet</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="width: 100%;">
+        <div class="tweets">
+               <div class="profile-pic">
+                <img src="../../assets/icons/hashtag.png" alt="" srcset="">
+               </div>
+               <div class="tweet-content">
+                  <div class="tweet-content-header">
+                     <p style="font-weight: 800;">MrBeast</p>
+                     <img height="20x" width="20px" src="../../assets/icons/verified.png" alt="" srcset="">
+                     <p>@MrBeast</p>
+                     <p>&nbsp; Dec 18</p>
+                    </div>
+                    <div class="tweet-text">
+                        <div>One of the greatest games ever. Well played Argentina and France. Jogo Bonito. Nobody deserves it more than #messi, imho the greatest ever to play the game. What a swansong. #FIFAWorldCup</div>
+                        <div>
+                            <img src="https://pbs.twimg.com/media/FkXye41UcAAnbXj?format=jpg&name=medium" alt="" srcset="">
+                        </div>
+                    </div>
+               </div>
+
+        </div>
+        
+    </div>
+</div>

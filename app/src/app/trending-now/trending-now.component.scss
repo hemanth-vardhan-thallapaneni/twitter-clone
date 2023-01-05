@@ -1,0 +1,32 @@
+.trending-now-container{
+    padding: 0px 30px;
+
+    .who-to-follow-div{
+        display: flex;
+        flex-direction: column;
+        .follow-peope-div{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            .user-details{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                p{
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+            .follow-button{
+               border: none;
+                padding: 10px 15px;
+                border-radius: 20px;
+                background-color: var(--text-color);
+                color: var(--background-color);
+            }
+        }
+    }
+}
+

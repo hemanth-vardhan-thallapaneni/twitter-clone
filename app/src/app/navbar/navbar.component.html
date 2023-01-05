@@ -1,0 +1,19 @@
+<div class="navbar-container" >
+    <!-- twitter logo -->
+    <div class="logo"> 
+        <img src="../../assets/icons/twitter.png" alt="" srcset="">
+    </div>
+    <!-- Rendering all other navitems -->
+    <div class="navbar" *ngFor="let item of navItems">
+        <a routerLink="{{item.router}}" class="nav-item" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active">
+            <div class="nav-icon">
+                <img src="./../../assets/icons/{{item.icon}}.png" alt="" srcset=""></div>
+            <div class="nav-name">
+                {{item.name}}
+            </div>
+          </a>
+    </div>
+    <!-- Tweet button -->
+    <button class="tweet-button">Tweet</button>
+     
+</div>

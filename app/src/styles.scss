@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600&display=swap'); 
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Syne', sans-serif;
+    --text-color:black;
+    --primary-color:rgb(28,155,239);
+    --primary-light-color:rgb(134, 197, 238);
+    --secondary-color:#EFF3F4;
+    --background-color:white;
+    --image-color-invert:invert(0%);
+    transition: all 500ms ease-in;
+    
+}
+body.dark-theme{
+    --text-color:white;
+    --primary-color:rgb(28,155,239);
+    --secondary-color:rgb(66,70,74);
+    --background-color:rgb(0,0,0);
+    --image-color-invert:invert(100%);
+    transition: all 500ms ease-in;
+}
+
+body{
+    background:var(--background-color);
+    color: var(--text-color);
+    transition: all 500ms ease-in;
+}

@@ -1,0 +1,25 @@
+
+.home-container{
+    height: 100vh;
+    padding: 5px 5%;
+    display: flex;
+    flex: 100;
+  .navbar{
+    flex: 20;
+    height: 100%;  
+    border-right: 1px solid var(--secondary-color);
+  }
+  .home-feed{
+    flex: 55;
+    width: 500px;
+  }
+  .trending-now{
+    flex: 25;
+  }
+}
+@media (max-width: 900px) {
+  .trending-now{
+      display: none;
+  }
+  
+}

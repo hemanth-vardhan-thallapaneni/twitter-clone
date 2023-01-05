@@ -1,0 +1,37 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Compiled output
+app/dist
+app/tmp
+app/out-tsc
+app/bazel-out
+server/.env
+
+# Node
+app/node_modules
+server/node_modules
+npm-debug.log
+yarn-error.log
+
+
+# Visual Studio Code
+app/.vscode/*
+app/!.vscode/settings.json
+app/!.vscode/tasks.json
+app/!.vscode/launch.json
+app/!.vscode/extensions.json
+app/.history/*
+
+# Miscellaneous
+app/.angular/cache
+app/.sass-cache/
+app/connect.lock
+app/coverage
+app/libpeerconnection.log
+app/testem.log
+app/typings
+
+# System files
+.DS_Store
+.DS_Store
+app/Thumbs.db

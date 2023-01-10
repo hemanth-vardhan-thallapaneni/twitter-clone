@@ -9,17 +9,20 @@ import { HttpService } from "../common/services/http.service";
 })
 export class HomeFeedComponent implements OnInit {
   isDarkMode: boolean = false; // by default light mode theme is applied. Refer styles.css
-  disableMediaButtons: boolean = true; //After selecting a single file other inputs are disabled
+  //disableMediaButtons: boolean = true; //After selecting a single file other inputs are disabled
   formdata = new FormData(); //Need formdata for uploading the media files to server
-  media: any = {};
+  media: string = "";
+  tweets: any[] = [];
   tweetObj: any = {
-    tweet: "tweet",
+    tweet: "",
     date: new Date(),
-    user_id: 0,
+    user: localStorage.getItem("user_id"),
   };
   constructor(private http: HttpService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getAllTweets();
+  }
 
   //This below method triggers darkmode for entire application.Refer the "dark-theme" class in styles.css
   darkMode() {
@@ -36,13 +39,9 @@ export class HomeFeedComponent implements OnInit {
   //Below method triggers everytime we select a file.
   selectFile(event: any) {
     let media_file = event.target.files[0];
-    this.disableMediaButtons = false;
-    this.media.type = media_file.type;
     /*Appending the file data to form data. We will send this tweetObj
     to server*/
     this.formdata.append("file", media_file, media_file.name);
-
-    this.tweetObj.media = this.formdata;
     this.displayMedia(media_file);
   }
 
@@ -52,7 +51,7 @@ export class HomeFeedComponent implements OnInit {
     const reader = new FileReader();
     reader.readAsDataURL(media);
     reader.onload = (_event) => {
-      this.media.url = reader.result as string;
+      this.media = reader.result as string;
     };
   }
 
@@ -62,5 +61,18 @@ export class HomeFeedComponent implements OnInit {
     this.formdata.append("tweet", JSON.stringify(this.tweetObj));
     this.http.postTweet(this.formdata);
     this.formdata = new FormData();
+    this.tweetObj.tweet = "";
+  }
+
+  getAllTweets() {
+    this.http.getAllTweets().subscribe((res: any) => {
+      this.tweets = res["all_tweets"];
+      console.log(this.tweets);
+    });
+  }
+
+  updateTweet(tweet: any) {
+    console.log(tweet);
+    this.http.updateTweet(tweet);
   }
 }

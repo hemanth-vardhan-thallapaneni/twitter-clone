@@ -8,20 +8,16 @@ const storage = multer.memoryStorage({
         cb(null, '')
     }
 })
+
 const upload = multer({ storage: storage});
 
 const {
-    getAllTweets,
-    postTweet,
-    updateTweet,
+    signUpUser,
+    signInUser
 } = require('../controllers/controller')
 
-
-
-router.get('/all_tweets',getAllTweets)
-router.post('/post_tweet',upload.single("file"),postTweet)
-router.patch('/update_tweet',updateTweet)
-
+router.post('/signup_user',upload.single("file"),signUpUser)
+router.post('/signin_user',signInUser)
 
 
 module.exports = router;

@@ -1,0 +1,30 @@
+<div class="signup-container">
+   
+    <form class="signup-form" #signInForm="ngForm" (ngSubmit)="signInForm.form.valid && userSignUp()">
+        <h3>{{isSignUp ? 'New to twitter?' : 'Hello, Welcome back!'}}</h3>
+        <div>
+        <label>Email</label>
+        <input required type="email" name="email" [(ngModel)]="signUpForm.email">
+        </div>
+        <div *ngIf="isSignUp"><label>Display Name</label>
+        <input required type="text" name="username" [(ngModel)]="signUpForm.displayName">
+        </div>
+        <div>
+        <label>Password</label>
+        <input #password="ngModel" minlength="6" required type="password" name="password" [(ngModel)]="signUpForm.password">
+      
+        </div>
+        <span class="form-errors" *ngIf="password?.errors?.['minlength']">Password must be at least 6 characters</span>
+        <!-- <div><label>Repeat Password</label>
+        <input required type="password" name="">
+        </div> -->
+        <div *ngIf="isSignUp">
+            <label>Profile pic</label>
+            <input (change)="profilePicUpload($event)" required type="file" name="file">
+          
+            </div>
+        <button [disabled]="!signInForm.valid" class="submit-button" type="submit">{{isSignUp ? 'Sign Up!':'Sign In!'}}</button>
+        <span (click)="alreadyUser()" style="align-self: center;text-decoration: underline;cursor: pointer;">{{isSignUp ? 'Already a user?':'New user?'}}</span> 
+    </form>
+   
+</div>

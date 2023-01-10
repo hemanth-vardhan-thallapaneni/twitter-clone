@@ -1,0 +1,57 @@
+.signup-container{
+    width: 100%;
+    background: var(--secondary-color);
+    padding: 15px;
+    border-radius: 10px;
+    h3{
+        margin: 5px;
+        font-weight: 800;
+    }
+    .google-button{
+        height: 52px;
+    }
+   
+    .signup-form{
+        width: 100%;
+        font-family: 'DM Sans', sans-serif;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        div{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            input{
+                padding: 10px;
+                height: 20px;
+                border: 1px solid var(--primary-light-color);
+                background-color: var(--background-color);
+                border-radius: 10px;
+                // outline: none;
+            }
+        }
+        .form-errors{
+            margin-left: 20%;
+            font-weight: bold;
+            font-size: 10px;
+            color: red;
+        }
+       
+     
+        .submit-button{
+             margin-top: 10px;
+             font-size: 15px;
+             background-color: var(--primary-color);
+             border: none;
+             font-weight: 800;
+             border-radius: 20px;
+             height: 40px;
+             width: 100%;
+             color: white;
+        }
+        .submit-button:disabled{
+            background-color: #cccccc;
+           //  color: var(--primary-color);
+       }
+    }
+}

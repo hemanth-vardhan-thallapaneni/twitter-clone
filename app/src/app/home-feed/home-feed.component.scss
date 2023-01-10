@@ -8,12 +8,15 @@
     align-items: center;
     border-right: 1px solid var(--secondary-color);
     .profile-pic{
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
         img{
+            height: 50px;
+            width: 50px;
             background-color: azure;
             border-radius: 50%;
         }
-        
-
     }
     .tweet-input-box{
         width: 94%;
@@ -74,37 +77,16 @@
                     font-weight: bolder;
                     margin-left: 100px;
                 }
+                .tweet-button:disabled{
+                     background-color: #cccccc;
+                    //  color: var(--primary-color);
+                }
             }
        
         }
         
     }
-    .tweets{
-        width: 100%;
-        padding: 20px 10px;
-        display: flex;
-        gap: 10px;
-        .tweet-content{
-            display: flex;
-            flex-flow: column nowrap;
-           
-            padding: 0px 25px 0px 0px;
-            .tweet-content-header{
-                display: flex;
-                align-items: center;
-                justify-content: flex-start;
-                gap: 2px;
-            }
-            .tweet-text{
-                img{
-                    margin-top: 10px;
-                    max-width: 100%;
-                    max-height: 100%;
-                    border-radius: 20px;
-                }
-            }
-        }
-    }
+   
     .disable{
         pointer-events: none;
     }

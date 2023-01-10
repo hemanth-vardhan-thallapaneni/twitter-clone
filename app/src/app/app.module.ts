@@ -8,6 +8,8 @@ import { AppComponent } from "./app.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { HomeFeedComponent } from "./home-feed/home-feed.component";
 import { TrendingNowComponent } from "./trending-now/trending-now.component";
+import { TweetCardComponent } from "./home-feed/tweet-card/tweet-card.component";
+import { SignupComponent } from "./trending-now/signup/signup.component";
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { TrendingNowComponent } from "./trending-now/trending-now.component";
     NavbarComponent,
     HomeFeedComponent,
     TrendingNowComponent,
+    TweetCardComponent,
+    SignupComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

@@ -1,7 +1,7 @@
 <div class="navbar-container" >
     <!-- twitter logo -->
     <div class="logo"> 
-        <img src="../../assets/icons/twitter.png" alt="" srcset="">
+        <img src="../../assets/icons/twitter-blue.png" alt="" srcset="">
     </div>
     <!-- Rendering all other navitems -->
     <div class="navbar" *ngFor="let item of navItems">
@@ -9,7 +9,7 @@
             <div class="nav-icon">
                 <img src="./../../assets/icons/{{item.icon}}.png" alt="" srcset=""></div>
             <div class="nav-name">
-                {{item.name}}
+                {{item.name | titlecase}}
             </div>
           </a>
     </div>

@@ -1,0 +1,38 @@
+<div class="tweets">
+    <div class="profile-pic">
+     <img *ngIf="tweet.user" [src]="tweet.user.profilePic" alt="" srcset="">
+     <img *ngIf="!tweet.user" src="../../assets/icons/profile.png" alt="" srcset="">
+    </div>
+    <div class="tweet-content">
+       <div class="tweet-content-header">
+          <div style="font-weight: 800;">{{tweet.user.displayName}}</div>
+          <img height="20x" width="20px" src="../../assets/icons/verified.png" alt="" srcset="">
+          <div>@{{tweet.user.userName}}</div>
+          <div>&nbsp;{{tweet.createdAt | date}}</div>
+         </div>
+         <div class="tweet-text">
+             <div>{{tweet.tweet}}</div>
+             <div *ngIf="tweet.media">
+                 <img  [src]="tweet.media" alt="" srcset="">
+             </div>
+             <span *ngIf="!isLoggedIn" class="not-signedin">Join Twitter family to like this tweet!</span><br>
+             <div [ngClass]="isLoggedIn ? 'active' :'' " class="tweet-reactions">
+               
+                <div  class="tweet-like">
+                    <img *ngIf="!likeToggle && tweet?.['likedBy']?.[user_id] != 1"  (click)="tweetLiked(true)" [src]="notLiked" alt="" srcset="">
+                    <img *ngIf="likeToggle || tweet?.['likedBy']?.[user_id] == 1"  (click)="tweetLiked(false)" [src]="liked" alt="" srcset="">
+                    <span>{{this.tweet.likeCount}}</span>
+                </div>
+             
+                    
+                    <img src="../../../assets/icons/comment.png" alt="" srcset="">
+                    <img src="../../../assets/icons/share.png" alt="" srcset="">
+             </div>
+           
+               
+    
+           
+         </div>
+    </div>
+
+</div>

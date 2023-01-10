@@ -1,5 +1,9 @@
 <div class="trending-now-container">
     <div class="who-to-follow-div">
+        <div *ngIf="!showSignUp">
+            <app-signup ></app-signup>
+        </div>
+      
          <h3>Who to follow</h3>
          <div class="follow-peope-div">
             <img src=".../../../../assets/icons/bell.png" alt="" srcset="">

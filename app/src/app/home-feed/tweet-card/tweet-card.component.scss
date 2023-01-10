@@ -1,0 +1,82 @@
+.profile-pic{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    img{
+        height: 50px;
+        width: 50px;
+        background-color: azure;
+        border-radius: 50%;
+    }
+}
+
+.tweets{
+    width: 100%;
+    padding: 20px 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    border-bottom: 1px solid var(--secondary-color);
+    .tweet-content{
+        width: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        justify-content: start;
+        //padding: 0px 25px 0px 0px;
+        .tweet-content-header{
+            display: flex;
+            align-items: start;
+            justify-content: flex-start;
+            gap: 2px;
+        }
+        .tweet-text{
+           width: 100%;
+           display: flex;
+           flex-direction: column;
+           align-items: flex-start;
+           .not-signedin{
+            align-self: center;
+            justify-self: center;
+            opacity: 0.4;
+        }
+            img{
+                
+                margin-top: 10px;
+                width: 90%;
+                height: 100%;
+                border-radius: 20px;
+            }
+            .tweet-reactions{
+              
+                display: flex;
+                opacity: 0.3;
+                cursor: not-allowed;
+                width: 100%;
+                justify-content: space-around;
+                align-items: center;
+               
+                img{
+                    height: 20px;
+                    width: 20px;
+                   
+                }
+                .tweet-like{
+                   gap: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    span{
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.active{
+    opacity: 1 !important;
+    cursor: pointer !important;
+}

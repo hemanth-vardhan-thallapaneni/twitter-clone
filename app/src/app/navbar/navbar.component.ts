@@ -1,42 +1,44 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss'],
+  selector: "app-navbar",
+  templateUrl: "./navbar.component.html",
+  styleUrls: ["./navbar.component.scss"],
 })
 export class NavbarComponent implements OnInit {
   //list of all navigation routes
   navItems: any[] = [
     {
-      name: 'Home',
-      icon: 'home',
-      router: '/home',
+      name: "Home",
+      icon: "home",
+      router: "/home",
     },
     {
-      name: 'Explore',
-      icon: 'hashtag',
-      router: '/explore',
+      name: "Explore",
+      icon: "hashtag",
+      router: "/explore",
     },
     {
-      name: 'Notifications',
-      icon: 'bell',
-      router: '/notifications',
+      name: "Notifications",
+      icon: "bell",
+      router: "/notifications",
     },
     {
-      name: 'Messages',
-      icon: 'envelope',
-      router: '/messages',
+      name: "Messages",
+      icon: "envelope",
+      router: "/messages",
     },
     {
-      name: 'Bookmarks',
-      icon: 'bookmark',
-      router: '/bookmark',
+      name: "Bookmarks",
+      icon: "bookmark",
+      router: "/bookmark",
     },
     {
-      name: 'Profile',
-      icon: 'profile',
-      router: '/profile',
+      name: localStorage.getItem("display_name")?.length
+        ? localStorage.getItem("display_name")
+        : "Profile",
+      icon: "profile",
+      router: "/profile",
     },
   ];
 

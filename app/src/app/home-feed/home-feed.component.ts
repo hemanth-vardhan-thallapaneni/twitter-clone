@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Tweet } from "../common/models/tweet";
+import { AuthService } from "../common/services/auth.service";
 import { HttpService } from "../common/services/http.service";
 
 @Component({
@@ -18,10 +19,15 @@ export class HomeFeedComponent implements OnInit {
     date: new Date(),
     user: localStorage.getItem("user_id"),
   };
-  constructor(private http: HttpService) {}
+  constructor(private http: HttpService, private auth: AuthService) {}
 
   ngOnInit(): void {
     this.getAllTweets();
+    this.auth.isLoggedIn.subscribe((res: any) => {
+      if (res) {
+        this.getAllTweets();
+      }
+    });
   }
 
   //This below method triggers darkmode for entire application.Refer the "dark-theme" class in styles.css

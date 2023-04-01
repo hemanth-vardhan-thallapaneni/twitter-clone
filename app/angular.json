@@ -100,6 +100,14 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/twitter-clone",
+            "netlifyToken": "9nvXUDikVfOIp3_bOuuk3Fe806ZghA6S4Sc4ikrgIps",
+            "siteId": "b45f8017-194a-44f7-b6d8-0c2b774c53ca"
+          }
         }
       }
     }
